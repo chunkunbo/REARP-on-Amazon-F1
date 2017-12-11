@@ -95,4 +95,6 @@ One example of rtl.sh is provided. After modifying the file, users can run the f
 ./rtl.sh
 ```
 
+This whole process could take hours (depending on the ANML file size) and after it finishes, it will generate several new files and folders. In order to the application on AWS F1, we need the executale (io_globle) and the .xclbin file (\xclbin\bandwidth.hw.xilinx_aws-vu9p-f1_4ddr-xpr-2pr_4_0.xclbin). 
+
 
