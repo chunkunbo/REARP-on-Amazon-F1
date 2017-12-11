@@ -22,8 +22,7 @@ Since AWS FPGA tool kit includes Xilinx Vivado HLS and Xilinx SDAccel, users do 
 
 1. Compile on local machine
 One can either compile REAPR on local machines or any Amazon instances. We choose to use the local machine so we do not need to pay for the compute hours for comilation.
-
- 1.1 Set sdaccel (provided by AWS FPGA tool kit) path in .bash_profile.
+1.1 Set sdaccel (provided by AWS FPGA tool kit) path in .bash_profile.
 ####  Example
 Add the the following statement to .bash_profile.
 ```
