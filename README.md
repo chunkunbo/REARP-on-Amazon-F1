@@ -22,10 +22,22 @@ Since AWS FPGA tool kit includes Xilinx Vivado HLS and Xilinx SDAccel, users do 
 1. Compile on local machine
 One can either compile REAPR on local machines or any Amazon instances. We choose to use the local machine so we do not need to pay for the compute hours for comilation.
 1.1 Set sdaccel (provided by AWS FPGA tool kit) path in .bash_profile.
-### Example
+#### Example
 Add the the following statement to .bash_profile.
 ```
 source /localtmp/AWS_F1_Xilinx/SDx/2017.1.op/settings64.sh
+```
+1.2 Compile REAPR
+1.2.1 In the original REAPR folder, run the following command to setup environment variables.
+```
+source source_me.sh
+```
+1.2.2 Under pcie_integration/rtl_prj/ folder, find the rtl.sh and modify the file.
+Major changes:
+* set SDACCEL_REPO_PATH to where you actrually store aws-fpga SDAccel
+#### Example
+```
+SDACCEL_REPO_PATH=/af5/cb2yy/aws-fpga/SDAccel/examples/xilinx
 ```
 
 
