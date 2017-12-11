@@ -114,7 +114,29 @@ $SDACCEL_DIR/tools/create_sdaccel_afi.sh -xclbin=bandwidth.hw.xilinx_aws-vu9p-f1
 ```
 Running this command will generate an AWS FPGA Binary ended with awsxclbin and some text file containing the AFI id. 
 2.3 Check availabity of the AFI
-Creating AFI usually 
+
+The AFI is not created immediatly, so users can use the following command to check the status using the AFI id in the text files.
+```
+aws ec2 describe-fpga-images --fpga-image-ids <AFI ID>
+```
+If it output information like this, the AFI is ready to be used.
+```
+                ...
+                "State": {
+                    "Code": "available"
+                },
+		...
+```
+
+
+2.4 Run the application
+In the folder where you store the AWS FPGA Binary and the executable, run the following command.
+```
+sudo sh
+source /opt/Xilinx/SDx/2017.1.rte/setup.sh 
+./executale input_file_name
+```
+Your application using REAPR now is runnable on AWS F1.
 
 
 
