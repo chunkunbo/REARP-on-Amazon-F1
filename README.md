@@ -6,4 +6,12 @@ In this project, we automata the original workflow of the original REAPR and por
 
 ## Amazon EC2 F1
 Amazon EC2 F1 is the first EC2 compute instance with FPGAs. There are two types of F1 instances: f1.2xlarge and f1.16xlarge. In this project, we use the smaller one.
+More details about F1 instances can be found in https://aws.amazon.com/ec2/instance-types/f1/.
 
+##Requirements
+1. Download original REAPR from https://github.com/ted-xie/REAPR
+2. Download AWS FPGA tool kit from https://github.com/aws/aws-fpga
+3. Prerequisites for REARR: 
+* python3.6+
+* virtualenv
+* pip
