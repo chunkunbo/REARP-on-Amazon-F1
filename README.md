@@ -20,7 +20,7 @@ Since AWS FPGA tool kit includes Xilinx Vivado HLS and Xilinx SDAccel, users do 
 
 ## Usage
 
-1. Compile on local machine
+### 1. Compile on local machine
 One can either compile REAPR on local machines or any Amazon instances. We choose to use the local machine so we do not need to pay for the compute hours for comilation.
 
 1.1 Set sdaccel (provided by AWS FPGA tool kit) path in .bash_profile.
@@ -95,6 +95,26 @@ One example of rtl.sh is provided. After modifying the file, users can run the f
 ./rtl.sh
 ```
 
-This whole process could take hours (depending on the ANML file size) and after it finishes, it will generate several new files and folders. In order to the application on AWS F1, we need the executale (io_globle) and the .xclbin file (\xclbin\bandwidth.hw.xilinx_aws-vu9p-f1_4ddr-xpr-2pr_4_0.xclbin). 
+This whole process could take hours (depending on the ANML file size) and after it finishes, it will generate several new files and folders. In order to the application on AWS F1, we need the executale (io_globle) and the .xclbin file (\xclbin\bandwidth.hw.xilinx_aws-vu9p-f1_4ddr-xpr-2pr_4_0.xclbin). Upload these two files to your F1 instance.
+
+### 2. Run on F1 instance
+2.1 In the F1 instance, download AWS F1 tool kit and set up the environment.
+```
+git clone https://github.com/aws/aws-fpga.git $AWS_FPGA_REPO_DIR  
+cd $AWS_FPGA_REPO_DIR                                         
+source sdaccel_setup.sh
+source $XILINX_SDX/settings64.sh 
+```
+2.2 Create Amazon FPGA Image (AFI)
+This sccript is provided to facilitate AFI creation from a Xilinx FPGA Binary. Users need to provide the .xclbin file, which we already upload from local machine in the first step. Users also need to provide the s3 locations to store certain output. The way to setup AWS_CLI and S3_Bucket can be found in https://github.com/aws/aws-fpga/blob/master/SDAccel/docs/Setup_AWS_CLI_and_S3_Bucket.md.
+
+Example:
+```
+$SDACCEL_DIR/tools/create_sdaccel_afi.sh -xclbin=bandwidth.hw.xilinx_aws-vu9p-f1_4ddr-xpr-2pr_4_0.xclbin -o=bandwidth.hw.xilinx_aws-vu9p-f1_4ddr-xpr-2pr_4_0 -s3_bucket=sda_brill -s3_dcp_key=sda_brill_dcp -s3_logs_key=sda_brill_logs
+```
+Running this command will generate an AWS FPGA Binary ended with awsxclbin and some text file containing the AFI id. 
+2.3 Check availabity of the AFI
+Creating AFI usually 
+
 
 
