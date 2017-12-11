@@ -39,6 +39,49 @@ Major changes:
 ```
 SDACCEL_REPO_PATH=/af5/cb2yy/aws-fpga/SDAccel/examples/xilinx
 ```
+* set ANML file path, more ANML files can be found in ANMLZoo https://github.com/jackwadden/ANMLZoo.
+#### Example
+```
+ ANML=Examples/brill.anml
+```
+* set output VHDL file name
+#### Example
+```
+ OUTFILE=brill.vhd
+```
+* set entity name for the VHDL entity
+#### Example
+```
+ ENTITY=snort
+```
+* set report size
+#### Example
+```
+ REPORT_SIZE=221
+```
+* set DDRbanks available in the FPGA board
+#### Example
+```
+ DDR_BANKS=4
+```
+* set FPGA device name
+#### Example
+```
+ DEVICE_NAME="xcvu9p-flgb2104-2-i"
+```
+* set the target synthesis frequency
+#### Example
+```
+ CLK_FREQ_MHZ=250
+```
+* change the device in the last statement to compile for the right device
+```
+nohup make all TARGETS=hw DEVICES=xilinx:aws-vu9p-f1:4ddr-xpr-2pr:4.0
+```
 
+One example of rtl.sh is provided. After modifying the file, users can run the following the command to start compiling. The whole workflow in included in the script and will output all the information in nohup.txt.
+```
+./rtl.sh
+```
 
 
