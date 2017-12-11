@@ -38,42 +38,50 @@ source source_me.sh
  1.2.2 Under pcie_integration/rtl_prj/ folder, find the rtl.sh and modify the file.
 Major changes:
 * set SDACCEL_REPO_PATH to where you actrually store aws-fpga SDAccel
+
 Example:
 ```
 SDACCEL_REPO_PATH=/af5/cb2yy/aws-fpga/SDAccel/examples/xilinx
 ```
 * set ANML file path, more ANML files can be found in ANMLZoo https://github.com/jackwadden/ANMLZoo.
- #### Example
+
+Example
 ```
  ANML=Examples/brill.anml
 ```
 * set output VHDL file name
- #### Example
+
+Example
 ```
  OUTFILE=brill.vhd
 ```
 * set entity name for the VHDL entity
- #### Example
+
+Example
 ```
   ENTITY=snort
 ```
 * set report size
- #### Example
+
+Example
 ```
   REPORT_SIZE=221
 ```
 * set DDRbanks available in the FPGA board
- #### Example
+
+Example
 ```
   DDR_BANKS=4
 ```
 * set FPGA device name
- #### Example
+
+Example
 ```
   DEVICE_NAME="xcvu9p-flgb2104-2-i"
 ```
 * set the target synthesis frequency
- #### Example
+
+Example
 ```
   CLK_FREQ_MHZ=250
 ```
