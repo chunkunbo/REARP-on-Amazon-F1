@@ -8,7 +8,7 @@ In this project, we automata the original workflow of the original REAPR and por
 Amazon EC2 F1 is the first EC2 compute instance with FPGAs. There are two types of F1 instances: f1.2xlarge and f1.16xlarge. In this project, we use the smaller one.
 More details about F1 instances can be found in https://aws.amazon.com/ec2/instance-types/f1/.
 
-##Requirements
+## Requirements
 1. Download original REAPR from https://github.com/ted-xie/REAPR
 2. Download AWS FPGA tool kit from https://github.com/aws/aws-fpga
 3. Prerequisites for REARR: 
@@ -17,5 +17,16 @@ More details about F1 instances can be found in https://aws.amazon.com/ec2/insta
 * pip
 
 Since AWS FPGA tool kit includes Xilinx Vivado HLS and Xilinx SDAccel, users do not need to pre-install these tools as required by the original REAPR. No licenses are needed.
+
+## Usage
+1. Compile on local machine
+One can either compile REAPR on local machines or any Amazon instances. We choose to use the local machine so we do not need to pay for the compute hours for comilation.
+1.1 Set sdaccel (provided by AWS FPGA tool kit) path in .bash_profile.
+### Example
+Add the the following statement to .bash_profile.
+```
+source /localtmp/AWS_F1_Xilinx/SDx/2017.1.op/settings64.sh
+```
+
 
 
