@@ -15,6 +15,7 @@ More details about F1 instances can be found in https://aws.amazon.com/ec2/insta
 * python3.6+
 * virtualenv
 * pip
-Since AWS FPGA tool kit includes Xilinx Vivado HLS and Xilinx SDAccel, users do not need to pre-install these tools as required by the original REAPR.
+
+Since AWS FPGA tool kit includes Xilinx Vivado HLS and Xilinx SDAccel, users do not need to pre-install these tools as required by the original REAPR. No licenses are needed.
 
 
