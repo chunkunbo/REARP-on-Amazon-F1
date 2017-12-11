@@ -38,7 +38,7 @@ source source_me.sh
  1.2.2 Under pcie_integration/rtl_prj/ folder, find the rtl.sh and modify the file.
 Major changes:
 * set SDACCEL_REPO_PATH to where you actrually store aws-fpga SDAccel
- #### Example
+Example:
 ```
 SDACCEL_REPO_PATH=/af5/cb2yy/aws-fpga/SDAccel/examples/xilinx
 ```
