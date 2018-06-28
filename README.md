@@ -119,7 +119,7 @@ The AFI is not created immediatly, so users can use the following command to che
 ```
 aws ec2 describe-fpga-images --fpga-image-ids <AFI ID>
 ```
-If it output information like this, the AFI is ready to be used.
+If it outputs information like this, the AFI is ready to be used.
 ```
                 ...
                 "State": {
@@ -134,7 +134,7 @@ In the folder where you store the AWS FPGA Binary and the executable, run the fo
 ```
 sudo sh
 source /opt/Xilinx/SDx/2017.1.rte/setup.sh 
-./executale input_file_name
+./executable input_file_name
 ```
 Your application using REAPR now is runnable on AWS F1.
 
